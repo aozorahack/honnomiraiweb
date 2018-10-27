@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="" name="description">
+<meta content="" name="author">
+  <meta property="og:title" content="<%= current_page.data.title || "本の未来基金" %>" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://honnomirai.net<%= current_page.url %>" />
+  <meta property="og:image" content="http://honnomirai.net/images/ogp/cloudandsky.jpg" />
+  <title><%= current_page.data.title || "本の未来基金" %></title>
+<link href="/stylesheets/bootstrap.css" rel="stylesheet">
+<link href="/stylesheets/offcanvas.css" rel="stylesheet">
+<link href="/stylesheets/docs.css" rel="stylesheet">
+<link href="/stylesheets/pygments-manni.css" rel="stylesheet">
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="../../assets/js/html5shiv.js"></script>
+  <script src="../../assets/js/respond.min.js"></script>
+<![endif]-->
+<!--    <%= stylesheet_link_tag "site" %> -->
+<!--    <%= javascript_include_tag "site" %> -->
+  </head>
+  <body>
+    <%= yield %>
+  <!-- Credit -->
+  <div class="container">
+    <hr>
+  <%= current_page.data.credit || "" %>
+    <p class="text-right"><small>このウェブサイトの<strong>文章</strong>は <a rel="license" href="http://creativecommons.org/licenses/by/2.1/jp/">クリエイティブ・コモンズ 表示 2.1 日本 ライセンスの下に提供されています</a></small><a rel="license" href="http://creativecommons.org/licenses/by/2.1/jp/"><img alt="クリエイティブ・コモンズ・ライセンス" style="border-width:0" src="https://i.creativecommons.org/l/by/2.1/jp/80x15.png" /></a></p>
+  </div>
+<!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/javascripts/jquery.js"></script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+  <script src="http://platform.twitter.com/widgets.js"></script>
+  <script src="/javascripts/holder.js"></script>
+  <script src="/javascripts/application.js"></script>
+</body>
+</html>
