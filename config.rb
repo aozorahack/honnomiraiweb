@@ -36,6 +36,25 @@ page '/*.txt', layout: false
 #     'Helping'
 #   end
 # end
+helpers do
+  def menu_active(key, val, cur_page)
+    cur_path = cur_page.path.split("/")[-1]
+    if val.kind_of?(String)
+      if key == cur_path
+        return " active"
+      else
+        return ""
+      end
+    else
+      val.each do |key2, val2|
+        if key2 == cur_path
+          return " active"
+        end
+      end
+    end
+    return ""
+  end
+end
 
 # Build-specific configuration
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
