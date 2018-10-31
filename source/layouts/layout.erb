@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <meta property="og:title" content="<%= current_page.data.title || "本の未来基金" %>" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://honnomirai.net<%= current_page.url %>" />
+    <meta property="og:image" content="http://honnomirai.net/images/ogp/cloudandsky.jpg" />
+    <title><%= current_page.data.title || "本の未来基金" %></title>
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="/stylesheets/offcanvas.css" rel="stylesheet">
+    <link href="/stylesheets/docs.css" rel="stylesheet">
+    <link href="/stylesheets/pygments-manni.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="/javascripts/html5shiv.js"></script>
+        <script src="/javascripts/respond.min.js"></script>
+    <![endif]-->
+    <!--    <%= stylesheet_link_tag "site" %> -->
+    <!--    <%= javascript_include_tag "site" %> -->
+  </head>
+  <body>
+    <!-- menu -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          <a class="navbar-brand" href="index.html">本の未来基金</a> </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <% data.links.menu.each do |key, val| %>
+            <%   if val.kind_of?(String) %>
+            <li class="<%= menu_active(key, val, current_page) %>"> <a href="<%= key %>"><%= val%></a> </li>
+            <%   else %>
+            <li class="dropdown<%= menu_active(key, val, current_page) %>"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= key %><b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <% val.each do |key2, val2| %>
+                <li><a href="<%= key2 %>"><%= val2 %></a></li>
+                <% end %>
+              </ul>
+            </li>
+            <%   end %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <%= yield %>
+    <!-- Credit -->
+    <div class="container">
+    <hr>
+    <%= current_page.data.credit || "" %>
+    <p class="text-right"><small>このウェブサイトの<strong>文章</strong>は <a rel="license" href="http://creativecommons.org/licenses/by/2.1/jp/">クリエイティブ・コモンズ 表示 2.1 日本 ライセンスの下に提供されています</a></small><a rel="license" href="http://creativecommons.org/licenses/by/2.1/jp/"><img alt="クリエイティブ・コモンズ・ライセンス" style="border-width:0" src="https://i.creativecommons.org/l/by/2.1/jp/80x15.png" /></a></p>
+    </div>
+    <!-- Bootstrap core JavaScript
+         ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="http://platform.twitter.com/widgets.js"></script>
+    <script src="/javascripts/holder.js"></script>
+    <script src="/javascripts/application.js"></script>
+  </body>
+</html>
