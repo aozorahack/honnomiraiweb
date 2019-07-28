@@ -850,6 +850,7 @@ pre code {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
+  padding-top: 15px;
 }
 
 .col-xs-1,
@@ -5011,6 +5012,24 @@ a.thumbnail:focus {
   padding: 9px;
   color: #333333;
 }
+
+.thumbnail .caption .name{
+  font-size: 14px;
+  margin: auto;
+}
+
+.thumbnail .caption .title{
+  font-size: 12px;
+}
+
+.thumbnail h4{
+  height: 4rem;
+}
+
+.thumbnail .credit{
+  height: 4em;
+}
+
 
 .alert {
   padding: 15px;
