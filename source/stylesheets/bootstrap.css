@@ -4944,6 +4944,13 @@ a.list-group-item.active > .badge,
   background-image: url("../images/sympo.jpg");
 }
 
+.jumbotron.cptermreport {
+  color: white;
+  background-size:cover;
+  background-position: center top;
+  background-image: url("../images/sympo.jpg");
+}
+
 .jumbotron.singapore {
 }
 
